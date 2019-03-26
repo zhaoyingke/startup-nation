@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     next (action) {
-      if (action) action(this.$store.commit)
+      if (action) action(this.$store.commit, this.$store.state)
       if (this.filteredSteps[this.step + 1]) {
         this.step++
       } else {
