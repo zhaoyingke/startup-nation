@@ -31,6 +31,12 @@ export default new Vuex.Store({
     },
     addInvestorPoints (state, payload) {
       state.investorPoints += payload
+    },
+    multiplyInvestorPointsby (state, payload) {
+      state.investorPoints = state.investorPoints * payload
+    },
+    addReputationPoints (state, payload) {
+      state.reputationPoints += payload
     }
   },
   actions: {
