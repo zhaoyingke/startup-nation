@@ -50,7 +50,6 @@ export default [{
       label: 'Rien du tout',
       action: (commit) => {
         commit('setAutoFinance', 0)
-        commit('multiplyMoneyBy', 0)
       }
     },
     {
@@ -133,9 +132,9 @@ export default [{
     }
   ]
 },
-//12
+// 12
 {
-  message: `Enregistrer formellement votre entreprise chez le Centre de Formalités des Entreprises ? Votre conseiller vous donnera plus d'informations sur les différents dispositifs d'aides aux startups mis en place par l'État`,
+  message: `Enregistrer formellement votre entreprise chez le Centre de Formalités des Entreprises ? Votre conseiller vous donnera plus d'informations sur les différents dispositifs d'aides aux startups mis en place par l'État`,
   buttons: [
     {
       label: `Non, je reste auto-entrepreneur pour le moment.`,
@@ -152,7 +151,7 @@ export default [{
     }
   ]
 },
-//13
+// 13
 {
   message: `Il est vendredi soir à 18h30. Que souhaitez-vous faire en fin d'une semaine intense au travail?`,
   buttons: [
@@ -160,30 +159,30 @@ export default [{
       label: `Le weekend n'existe pas pour les startuppeurs`
     },
     {
-      lable: `Le week-end est sacre. Je rentre à la maison pour reposer`
+      label: `Le week-end est sacre. Je rentre à la maison pour reposer`
     },
     {
-      lable: `Je vais à un évènement destiné à aider les entrepreneurs comme moi-même`,
+      label: `Je vais à un évènement destiné à aider les entrepreneurs comme moi-même`,
       action: (commit) => {
         commit('addInvestorPoints', 2)
       }
-    },  
+    },
     {
       label: `Je sors avec des amis. J'ai le droit, enfin !`
     }
   ]
 },
-//15
+// 15
 {
   message: `Félicitations ! Vous venez de fabriquer l'appli JustDrink ! Faites des testes avant de la lancer officiellement dans le marché.`,
   buttons: [`Très bien !`]
 },
-//16
+// 16
 {
   message: `Souhaitez-vous recruiter plus de membres dans votre équipe ?`,
   buttons: [
     {
-      label: `"Oui ! Plus on est de fous, plus on rit`,
+      label: `Oui ! Plus on est de fous, plus on rit`,
       action: (commit) => {
         commit('multiplyMoneyBy', 0.75)
         commit('addInvestorPoints', 2)
@@ -194,39 +193,39 @@ export default [{
     }
   ]
 },
-//17
+// 17
 {
   message: `WE NEED MORE INFO ON THIS, OR JUST LISTEN TO OUR ITWS`,
   buttons: [
     {
-      label: `J'ai hâte !`,
+      label: `J'ai hâte !`,
       action: (commit) => {
         commit('multiplyMoneyBy', 0.95)
       }
     }
   ]
 },
-//18
+// 18
 {
   message: `Un essai gratuit pourrait être bonne idée pour attirer plus de clients potentiels, mais aurait des coûts supplémentaires. Voulez-vous vous y mettre ? Vous pouvez désormais voir votre part de marché; conseils what is market share`,
   buttons: [{
     label: 'Très bonne idée !',
     action: (commit, state) => {
-      commit('multiplyMoneyBy', state.difficulty === 'hard' ? 0.5: 0.75)
-      commit('addReputationPoints', state.difficulty === `hard`? 5 : 7)
+      commit('multiplyMoneyBy', state.difficulty === 'hard' ? 0.5 : 0.75)
+      commit('addReputationPoints', state.difficulty === `hard` ? 5 : 7)
     }
   },
   {
     label: `Ce n'est pas la peine`
   }
-]
+  ]
 },
-//19
+// 19
 {
   message: `N'oubliez pas votre business plan (modèle économique) ! Le voulez-vous raffiner avant de procéder à la prochaine étape ?`,
   buttons: [
     {
-      label: `"Oui !`,
+      label: `Oui !`,
       action: (commit) => {
         commit('multiplyMoneyBy', 0.98)
         commit('addInvestorPoints', 2)
@@ -237,7 +236,7 @@ export default [{
     }
   ]
 },
-//20
+// 20
 {
   message: `Pensez à régulariser vos activités à tout moment. Votre conseiller vous donnera plus d'informations sur les différents dispositifs d'aides aux startups mis en place par l'État`,
   buttons: [
@@ -253,7 +252,7 @@ export default [{
     }
   ]
 },
-//21
+// 21
 {
   message: `Vos partenaires et vos employés vous ont soutenu.e depuis le début du projet. Ne méritent-ils pas une récompense pour leur contribution ?`,
   buttons: [
@@ -271,12 +270,14 @@ export default [{
         commit('addReputationPoints', 1)
       }
     },
-    {lable: `Je voudrais bien, mais l'entreprise n'est pas encore à ce stade-là`}
+    {
+      label: `Je voudrais bien, mais l'entreprise n'est pas encore à ce stade-là`
+    }
   ]
 },
-//22
+// 22
 {
-  message: `Un bureau décent est non seulement plus agréable pour le travail, mais donne une image meilleure de votre jeune pousse. Êtes-vous prêt.e à vous loger mieux ?`,
+  message: `Un bureau décent est non seulement plus agréable pour le travail, mais donne une image meilleure de votre jeune pousse. Êtes-vous prêt.e à vous loger mieux ?`,
   buttons: [
     {
       label: `Oui, un bureau au cœur de Paris me paraît une bonne solution`,
@@ -293,14 +294,15 @@ export default [{
         commit('addInvestorPoints', 3)
       }
     },
-    {lable: ` Non, le garage de ma mère est gratuit, de toute façon`
+    {
+      label: ` Non, le garage de ma mère est gratuit, de toute façon`,
       action: commit => {
         commit('multiplyMoneyBy', 1.05)
       }
     }
   ]
 },
-//23
+// 23
 {
   message: `Les premiers clients ont donné des retours d'information, positifs comme négatifs...`,
   buttons: [
@@ -319,40 +321,40 @@ export default [{
     }
   ]
 },
-//turn 24
-  {
-    message: `Votre mère est très préoccupée: vous ne mangez pas assez, vous passez tout le temps à l'ordinateur, et ça fait longtemps qu'elle ne vous entend parler de quelque chose d'autre que le boulot. Elle en a parlé avec votre médicin conseil et il vous conseille de prendre une petite pause santé.`,
-    buttons: [
-      {
-        label: `Je suive le conseil du médicin et je prends quelque jour de pause du travail.`
-         action: (commit) => {
-          commit ('multiplyMoneyBy', 0.95)
-        }      
-      },
-      {
-        label: `J'appelle ma mère et je lui crie dessus parce-que je n'ai marre de ses préoccupations inutiles. Tout mes collègues m'entendent.`
-        action: (commit) => {
-          commit ('addReputationPoints', -2)
-        }
-      },
-      {
-        label: `J'ignore tout simplement les conseils (et aussi les petits symptomes de la fatigue que effectivement je sent)`
-      },
-      {
-        label: `J'achète en ligne des bizarres pillules que promettent de me faire oublier la fatigue tout de suite.`
-        // find a way to go to another page that says "Turns out those weird pills were actually bad for your health. You have to stay home sick for two weeks."
-         action: (commit) => {
-          commit('multiplyMoneyBy', 0.90)
-        }
-      }  
-    ]
-  },
-  {
-    message: `Votre deuxième bilan est désormais disponible. Cliquez ici pour voir plus de détails.`,
-    buttons: [`Parfait!`]
-  },
-//25 On a dit qu'on le fait pas
-//26
+// turn 24
+{
+  message: `Votre mère est très préoccupée: vous ne mangez pas assez, vous passez tout le temps à l'ordinateur, et ça fait longtemps qu'elle ne vous entend parler de quelque chose d'autre que le boulot. Elle en a parlé avec votre médicin conseil et il vous conseille de prendre une petite pause santé.`,
+  buttons: [
+    {
+      label: `Je suive le conseil du médicin et je prends quelque jour de pause du travail.`,
+      action: (commit) => {
+        commit('multiplyMoneyBy', 0.95)
+      }
+    },
+    {
+      label: `J'appelle ma mère et je lui crie dessus parce-que je n'ai marre de ses préoccupations inutiles. Tout mes collègues m'entendent.`,
+      action: (commit) => {
+        commit('addReputationPoints', -2)
+      }
+    },
+    {
+      label: `J'ignore tout simplement les conseils (et aussi les petits symptomes de la fatigue que effectivement je sent)`
+    },
+    {
+      label: `J'achète en ligne des bizarres pillules que promettent de me faire oublier la fatigue tout de suite.`,
+      // find a way to go to another page that says "Turns out those weird pills were actually bad for your health. You have to stay home sick for two weeks."
+      action: (commit) => {
+        commit('multiplyMoneyBy', 0.90)
+      }
+    }
+  ]
+},
+{
+  message: `Votre deuxième bilan est désormais disponible. Cliquez ici pour voir plus de détails.`,
+  buttons: [`Parfait!`]
+},
+// 25 On a dit qu'on le fait pas
+// 26
 {
   message: `Félicitations ! Vous venez de lancer la V2 de votre appli`,
   buttons: [
@@ -364,15 +366,16 @@ export default [{
     }
   ]
 },
-//27
+// 27
 {
   message: `Est-il venu le temps d'étendre l'équipe ?`,
   buttons: [
     {
       label: `Plus on est nombreux, mieux c'est`,
-       action: (commit) => {
+      action: (commit) => {
         commit('addInvestorPoints', 2)
         commit('multiplyMoneyBy', 0.75)
+      }
     },
     {
       label: 'Mieux d`etre seul que mal accompagné',
@@ -383,15 +386,16 @@ export default [{
     }
   ]
 },
-//28
+// 28
 {
   message: `Des spécialistes accompagnent les entrepreneurs comme vous dans leurs activités. Voulez-vous vous adresser à eux ?`,
   buttons: [
     {
       label: `Oui, je souhaite voir un.e spécialiste sur la levée de fonds`,
-       action: (commit) => {
+      action: (commit) => {
         commit('addInvestorPoints', 5)
         commit('multiplyMoneyBy', 1.05)
+      }
     },
     {
       label: 'Oui, je souhaite voir un.e spécialiste sur les aides du gouvernement',
@@ -399,36 +403,40 @@ export default [{
         commit('addInvestorPoints', 2)
         commit('multiplyMoneyBy', 1.05)
         commit('addReputationPoints', 3)
-      },
-      {
+      }
+    },
+    {
       label: 'Oui, je souhaite voir un.e spécialite sur l`inculbation et l`accélération',
       action: (commit) => {
         commit('addInvestorPoints', 1)
         commit('multiplyMoneyBy', 1.05)
         commit('addReputationPoints', 4)
+      }
     },
     {
       label: 'Non, il faut mettre l`argent là où c`est nécessaire)',
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
+      }
     }
   ]
 },
-//29
+// 29
 {
   message: `Un plan de réduction permettrait d'attirer de nouveaux clients et fidéliser les anciens, mais aurait des coûts supplémentaires. Voulez-vous vous y mettre ?`,
   buttons: [
     {
       label: `Mais oui, à grande échelle d'ailleurs !`,
-       action: (commit) => {
-        commit('addReputationpoints', 5)
-        commit('addMoneyBy', -100)
+      action: (commit) => {
+        commit('addReputationPoints', 5)
+        commit('addMoney', -100)
+      }
     },
     {
       label: 'Oui, mais de manière modeste',
       action: (commit) => {
-        commit('addReputationpoints', 3)
-        commit('addMoneyBy', -50)
+        commit('addReputationPoints', 3)
+        commit('addMoney', -50)
       }
     },
     {
@@ -436,24 +444,25 @@ export default [{
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
       }
-    },
+    }
   ]
 },
-//30
+// 30
 {
   message: `Faire une campaigne publicitaire pour permettre à un plus grand public de connaître votre entreprise ?`,
   buttons: [
     {
       label: `Oui, de manière virale, en plus !`,
-       action: (commit) => {
-        commit('addReputationpoints', 5)
-        commit('addMoneyBy', -100)
+      action: (commit) => {
+        commit('addReputationPoints', 5)
+        commit('addMoney', -100)
+      }
     },
     {
       label: 'Pourquoi pas, mas on reste prudent',
       action: (commit) => {
-        commit('addReputationpoints', 3)
-        commit('addMoneyBy', -50)
+        commit('addReputationPoints', 3)
+        commit('addMoney', -50)
       }
     },
     {
@@ -461,18 +470,19 @@ export default [{
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
       }
-    },
+    }
   ]
 },
-//31
+// 31
 {
   message: `Votre entreprise marche bien telle qu'elle est, mais avec plus de ressources financières elle ira plus loin. L'heure est-elle venue de lever des fonds ?`,
   buttons: [
     {
       label: `Oui, d'autant plus que l'avis positif d'un investisseur veut dire que ma startup est en plein potentiel`,
-       action: (commit) => {
+      action: (commit) => {
         commit('addInvestorPoints', 3)
         commit('multiplyMoneyBy', 1.05)
+      }
     },
     {
       label: 'Non, je ne veux pas perdre l`autonomie dans mes activités',
@@ -483,15 +493,16 @@ export default [{
     }
   ]
 },
-//32
+// 32
 {
   message: `Voulez-vous postuler à un programme d'aide aux entrepreneurs ou à un concours ? (cliquez sur le bouton conseiller pour plus d'informations)`,
   buttons: [
     {
       label: `Mais oui !`,
-       action: (commit) => {
-        commit('addReputationpoints', 3)
+      action: (commit) => {
+        commit('addReputationPoints', 3)
         commit('multiplyMoneyBy', 1.05)
+      }
     },
     {
       label: 'Non, le processus administratif sera un vrai cauchemar de toute façon !',
@@ -501,31 +512,31 @@ export default [{
     }
   ]
 },
-//33
+// 33
 {
   message: `Un journaliste travaillant pour un média économique est intéressé par votre profile et souhaite avoir un dialogue avec vous. Le verrez-vous ?`,
   buttons: [
     {
       label: `Oui, je l'invite à mon bureau avec plaisir`,
-       action: (commit) => {
-        commit('addReputationpoints', 5)
+      action: (commit) => {
+        commit('addReputationPoints', 5)
         commit('multiplyMoneyBy', 1.05)
+      }
     },
     {
       label: 'Oui, je lui passe un coup de fil vite fait',
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
-        commit('addReputationpoints', 3)
+        commit('addReputationPoints', 3)
       }
     },
     {
       label: 'Non, et s`il écrit des mauvaises choses sur l`entreprise ?',
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
-        commit('addReputationpoints', -5)
+        commit('addReputationPoints', -5)
       }
     }
   ]
-},
+}
 ]
-
