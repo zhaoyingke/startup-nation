@@ -4,15 +4,10 @@
     <button
       v-for="(button, i) in currentStep.buttons"
       :key="i"
-      @click="next(button.action)">
-      {{ button.label || button }}
-    </button>
+      @click="next(button.action)"
+    >{{ button.label || button }}</button>
     <div class="gauges">
-      <div
-        v-if="step >= 5"
-        class="money">
-        {{ $store.state.money }}
-      </div>
+      <div v-if="step >= 5" class="money">{{ $store.state.money }}</div>
     </div>
   </div>
 </template>
@@ -35,16 +30,17 @@ export default {
       },
       set (step) {
         this.$router.push({
-            name: 'game',
-            params: {
-                step
-            }
+          name: 'game',
+          params: {
+            step
+          }
         })
       }
     },
     filteredSteps () {
-      return this.steps
-        .filter((step) => step.when ? step.when(this.$store.state) : true)
+      return this.steps.filter(step =>
+        step.when ? step.when(this.$store.state) : true
+      )
     },
     currentStep () {
       return this.filteredSteps[this.step]
