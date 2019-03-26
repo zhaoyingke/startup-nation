@@ -12,6 +12,11 @@ export default new Router({
       component: Home
     },
     {
+      path: '/game/:step?',
+      name: 'game',
+      component: () => import(/* webpackChunkName: "game" */ './views/Game.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
