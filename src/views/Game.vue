@@ -1,11 +1,19 @@
 <template>
   <div class="game">
-    <p>{{ typeof currentStep.message === 'string' ? currentStep.message : currentStep.message($store.state) }}</p>
-    <button
-      v-for="(button, i) in currentStep.buttons"
-      :key="i"
-      @click="next(button.action)"
-    >{{ button.label || button }}</button>
+    <p
+      :key="step"
+      v-typeit="() => typeItDone = true">
+      {{ typeof currentStep.message === 'string' ? currentStep.message : currentStep.message($store.state) }}
+    </p>
+    <div
+      v-if="typeItDone"
+      class="actions">
+      <button
+        v-for="(button, i) in currentStep.buttons"
+        :key="i"
+        @click="next(button.action)"
+      >{{ button.label || button }}</button>
+    </div>
     <div class="gauges">
       <div v-if="step >= 5" class="money">{{ $store.state.money }}</div>
     </div>
@@ -20,7 +28,8 @@ export default {
   components: {},
   data () {
     return {
-      steps: GameSteps
+      steps: GameSteps,
+      typeItDone: false
     }
   },
   computed: {
@@ -44,6 +53,11 @@ export default {
     },
     currentStep () {
       return this.filteredSteps[this.step]
+    }
+  },
+  watch: {
+    step () {
+      this.typeItDone = false
     }
   },
   methods: {
