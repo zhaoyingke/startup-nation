@@ -10,14 +10,14 @@ export default [{
   message: `Choisissez votre niveau de difficulté. Cela affectera les évènements que vous rencontrerez dans votre aventure à venir.`,
   buttons: [
     {
-      message: 'Plus facile',
+      label: 'Plus facile',
       action: (commit) => {
         commit('setDifficulty', 'easy')
         commit('addMoney', 500)
       }
     },
     {
-      message: 'Plus difficile',
+      label: 'Plus difficile',
       action: (commit) => {
         commit('setDifficulty', 'hard')
         commit('addMoney', 250)
@@ -47,35 +47,35 @@ export default [{
   message: `Vous avez de l'épargne, et vous souhaitez en retirer une partie à votre projet pour le lancer. Cela montre à vos partenairs, vos clients et vos éventuels financeurs que vous êtes un bosseur sérieux. Combien d'argent voulez-vous consacrer à votre super projet startup ?`,
   buttons: [
     {
-      message: 'Rien du tout',
+      label: 'Rien du tout',
       action: (commit) => {
         commit('setAutoFinance', 0)
         commit('multiplyMoneyBy', 0)
       }
     },
     {
-      message: '30%',
+      label: '30%',
       action: (commit) => {
         commit('setAutoFinance', 0.3)
         commit('multiplyMoneyBy', 1.3)
       }
     },
     {
-      message: '50%',
+      label: '50%',
       action: (commit) => {
         commit('setAutoFinance', 0.5)
         commit('multiplyMoneyBy', 1.5)
       }
     },
     {
-      message: '70%',
+      label: '70%',
       action: (commit) => {
         commit('setAutoFinance', 0.7)
         commit('multiplyMoneyBy', 1.7)
       }
     },
     {
-      message: 'Tout',
+      label: 'Tout',
       action: (commit) => {
         commit('setAutoFinance', 1)
         commit('multiplyMoneyBy', 2)
@@ -87,13 +87,28 @@ export default [{
   message: `La réussite ne se fait guère seule. Deux de vos meilleurs amis ont exprimé leur intérêt à ce projet. Souhaitez-vous travaillez en équipe avec eux?`,
   buttons: [
     {
-      message: `Oui, l'union fait la force`,
+      label: `Oui, l'union fait la force`,
       action: (commit) => {
         commit('addInvestorPoints', 2)
       }
     },
     {
-      message: `Non, mieux vaut être seul que mal accompagné`
+      label: `Non, mieux vaut être seul que mal accompagné`
+    }
+  ]
+},
+{
+  message: `Le garage semble être la première pépinière des grandes réussites tech (prenez example de Bill Gates et Steve Jobs). Souhaitez-vous leur emboîter le pas? `,
+  buttons: [
+    {
+      label: `Oui, je m'installe dans le garage de ma mère`
+    },
+    {
+      label: 'Non, un bureau semble plus sérieux',
+      action: (commit) => {
+        commit('addInvestorPoints', 5)
+        commit('multiplyMoneyBy', 0.9)
+      }
     }
   ]
 }

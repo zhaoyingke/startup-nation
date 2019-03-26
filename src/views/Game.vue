@@ -5,7 +5,7 @@
       v-for="(button, i) in currentStep.buttons"
       :key="i"
       @click="next(button.action)">
-      {{ button.message || button }}
+      {{ button.label || button }}
     </button>
     <div class="gauges">
       <div
@@ -44,7 +44,7 @@ export default {
     },
     filteredSteps () {
       return this.steps
-        .filter((step, i) => step.when ? step.when(this.$store.state) : i <= this.step + 1)
+        .filter((step) => step.when ? step.when(this.$store.state) : true)
     },
     currentStep () {
       return this.filteredSteps[this.step]
@@ -53,7 +53,13 @@ export default {
   methods: {
     next (action) {
       if (action) action(this.$store.commit)
-      this.step++
+      if (this.filteredSteps[this.step + 1]) {
+        this.step++
+      } else {
+        this.$router.push({
+          name: 'home'
+        })
+      }
     }
   }
 }
