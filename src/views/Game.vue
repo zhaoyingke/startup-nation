@@ -60,3 +60,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  button + button {
+    margin-left: 5px;
+  }
+</style>
