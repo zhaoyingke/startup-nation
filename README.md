@@ -25,5 +25,11 @@ npm run test
 npm run lint
 ```
 
+### Deploy
+```
+npm run deploy
+```
+Then visit [https://zhaoyingke.github.io/startup-nation/](https://zhaoyingke.github.io/startup-nation/)
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
