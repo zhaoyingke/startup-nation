@@ -1,11 +1,8 @@
 <template>
   <div class="game">
-    <header v-if="header">
-      <h2>{{ header.title }}</h2>
-      <img
-        :src="require(`../assets/img/${header.illustration}`)"
-        class="illustration">
-    </header>
+    <header-illustration
+      :title="header.title"
+      :illustration="header.illustration" />
     <main class="box">
       <p
         :key="step"
@@ -22,23 +19,21 @@
           @click="next(button.action)"
         >{{ button.label || button }}</button>
       </div>
-      <div class="gauges">
-        <div v-if="step >= 5" class="money">
-          <money :value="$store.state.money" />
-        </div>
-      </div>
+      <gauges v-if="step >= 5" />
     </main>
   </div>
 </template>
 
 <script>
 import GameSteps from '@/game'
-import Money from '@/components/Money'
+import HeaderIllustration from '@/components/HeaderIllustration'
+import Gauges from '@/components/Gauges'
 
 export default {
   name: 'game',
   components: {
-    Money
+    HeaderIllustration,
+    Gauges
   },
   data () {
     return {
@@ -125,19 +120,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  header {
-    h2 {
-      font-size: 45px;
-      color: white;
-      text-shadow: 2px 3px 0px #C91432;
-    }
-    .illustration {
-      width: 100%;
-      max-width: 500px;
-      margin-bottom: -10px;
-    }
-  }
-
   .text {
     margin-top: 0px;
   }
@@ -149,25 +131,5 @@ export default {
 
   button + button {
     margin-left: 5px;
-  }
-
-  .gauges {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-
-    .money {
-      background-image: url('../assets/img/gold-coin.png');
-      background-position: center center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 70px;
-      height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 28px;
-    }
   }
 </style>
