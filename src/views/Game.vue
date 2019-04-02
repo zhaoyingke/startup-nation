@@ -66,6 +66,12 @@ export default {
       return this.filteredSteps[this.step]
     },
     header () {
+      if (this.step === 3) {
+        return {
+          title: '',
+          illustration: `${this.$store.state.difficulty}image.png`
+        }
+      }
       if (this.step >= 33) {
         return {
           title: 'Développer votre entreprise',
@@ -116,7 +122,7 @@ export default {
     }
     .illustration {
       width: 100%;
-      max-width: 300px;
+      max-width: 500px;
       margin-bottom: -10px;
     }
   }
