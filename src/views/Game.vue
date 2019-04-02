@@ -72,6 +72,14 @@ export default {
           illustration: `${this.$store.state.difficulty}image.png`
         }
       }
+
+      if (this.step === 4) {
+        return {
+          title: '',
+          illustration: `foodicons.png`
+        }
+      }
+
       if (this.step >= 33) {
         return {
           title: 'Développer votre entreprise',
