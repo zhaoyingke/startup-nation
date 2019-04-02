@@ -24,7 +24,7 @@
       </div>
       <div class="gauges">
         <div v-if="step >= 5" class="money">
-          <span>{{ $store.state.money }}</span>
+          <money :value="$store.state.money" />
         </div>
       </div>
     </main>
@@ -33,10 +33,13 @@
 
 <script>
 import GameSteps from '@/game'
+import Money from '@/components/Money'
 
 export default {
   name: 'game',
-  components: {},
+  components: {
+    Money
+  },
   data () {
     return {
       steps: GameSteps,

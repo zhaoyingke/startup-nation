@@ -19,7 +19,7 @@
       </div>
       <div class="gauges">
         <div class="money">
-          <span>{{ $store.state.money }}</span>
+          <money :value="$store.state.money" />
         </div>
       </div>
     </main>
@@ -27,10 +27,13 @@
 </template>
 
 <script>
+import Money from '@/components/Money'
 
 export default {
   name: 'lost',
-  components: {},
+  components: {
+    Money
+  },
   data () {
     return {
       typeItDone: false

@@ -32,9 +32,9 @@ export default new Vuex.Store({
     },
     multiplyMoneyBy (state, payload) {
       if (state.difficulty === 'hard') {
-        state.money = Math.round(state.money * (payload * 0.95))
+        state.money = state.money * (payload * 0.95)
       } else {
-        state.money = Math.round(state.money * payload)
+        state.money = state.money * payload
       }
     },
     setAutoFinance (state, payload) {
@@ -44,7 +44,7 @@ export default new Vuex.Store({
       state.investorPoints += payload
     },
     multiplyInvestorPointsby (state, payload) {
-      state.investorPoints = Math.round(state.investorPoints * payload)
+      state.investorPoints = state.investorPoints * payload
     },
     addReputationPoints (state, payload) {
       state.reputationPoints += payload
