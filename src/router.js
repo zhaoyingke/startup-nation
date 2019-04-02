@@ -17,6 +17,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "game" */ './views/Game.vue')
     },
     {
+      path: '/lost',
+      name: 'lost',
+      component: () => import(/* webpackChunkName: "game" */ './views/Lost.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

@@ -4,10 +4,12 @@ import router from './router'
 
 Vue.use(Vuex)
 
-const bankrupcy = store => {
+const money = store => {
   store.subscribe((mutation, state) => {
     if (state.money <= 0 && router.currentRoute.params.step > 4) {
-      alert('You almost lost')
+      router.push({
+        name: 'lost'
+      })
     }
   })
 }
@@ -50,6 +52,6 @@ export default new Vuex.Store({
   },
   actions: {},
   plugins: [
-    bankrupcy
+    money
   ]
 })
