@@ -321,7 +321,7 @@ export default [{
     }
   ]
 },
-// turn 24
+// turn 24 fun event
 {
   message: `Votre mère est très préoccupée: vous ne mangez pas assez, vous passez tout le temps à l'ordinateur, et ça fait longtemps qu'elle ne vous entend parler de quelque chose d'autre que le boulot. Elle en a parlé avec votre médicin conseil et il vous conseille de prendre une petite pause santé.`,
   buttons: [
@@ -540,42 +540,29 @@ export default [{
   ]
 },
 
-// 34 fun event
+// 34 fun (or panick) event
 {
-  message: `URGENCE ! Vous avez rendez-vous aved un fond d'investissement dans une heure, mais votre collègue étourdi a perdu les slides que vous allez présenter! Que faire maintenant ?`,
+  message: `URGENCE ! Vous avez rendez-vous aved un investisseur dans une heure, mais votre collègue étourdi a perdu les slides que vous devrez présenter ! Que faire maintenant ?`,
   buttons: [
     {
-      label: 'Je fais un congé de 4 jours pour y aller en mode zen',
+      label: `Je le punis en l'envoyer parler avec l'investisseur`,
       action: (commit) => {
-        commit('addMoney', -50)
+        // can we generate some ramndom number here? Cuz it's really beyond our control haha
         commit('addInvestorPoints', 2)
         commit('addReputationPoints', 2)
       }
     },
     {
-      lable: `J'y vais en train de nuit. J'aurai un look moins chic mais ce n'est pas grave`,
-      action: (commit) => {
-        commit('addMoney', -25)
-        commit('addInvestorPoints', 1)
-        commit('addReputationPoints', 1)
-      }
+      lable: `J'improvise. Mes cours de théâtre ne sont pas pour rien.`
     },
     {
-      label: `J'envoie un.e colleague`,
-      action: (commit) => {
-        commit('addMoney', -30)
-        commit('addInvestorPoints', -1)
-        commit('addReputationPoint', -1)
-      }
-    },
-    {
-      label: `cela ne m'intéresse pas`
+      label: `Je reporte le rendez-vous`
     }
   ]
 },
 // 35 rep*2
 {
-  message: `Félicitations ! Vous venez de lancer la V3 de votre appli`,
+  message: `Félicitations ! Vous venez de lancer la V4 de votre appli`,
   buttons: [
     {
       label: 'Magnifique !',
@@ -758,7 +745,6 @@ export default [{
     }
   ]
 },
-// 43 fun event
 // 44 rep*3
 {
   message: `Félicitations ! Vous venez de lancer la V3 de votre appli`,

@@ -127,10 +127,10 @@ export default {
   .box {
     border: 4px solid #245e85;
     padding: 24px;
-    font-family: 'Questrial', sans-serif;
   }
 
   button + button {
     margin-left: 5px;
+    text-align: center;
   }
 </style>

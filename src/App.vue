@@ -20,19 +20,29 @@ html, body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   color: #2c3e50;
 
   height: 100%;
   max-width: 800px;
   margin: auto;
 
-  font-size: 26px;
+  font-size: 20px;
   line-height: 32px;
   color: #245e85;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: 'The Bold Font';
+  // text-transform: uppercase;
+  // font-weight: bold;
+  // font-family: 'The Bold Font';
+  // text-align: center;
+  
+}
+span{
+  .ti-container {
+    font-family: 'Questrial', sans-serif;
+    font-size: 20;
+    text-transform: none;
+    text-align: left;
+  }
 }
 button {
   font-family: 'The Bold Font';
@@ -45,7 +55,8 @@ button {
   cursor: pointer;
   color: #245e85;
   outline: none;
-
+  text-align: center;
+  
   &:hover {
     background-color: transparent;
   }

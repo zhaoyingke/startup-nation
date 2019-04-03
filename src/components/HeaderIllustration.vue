@@ -25,11 +25,16 @@ export default {
 
 <style lang="scss" scoped>
   header {
+    text-align: center;
     h2 {
       font-size: 45px;
       color: white;
       text-shadow: 2px 3px 0px #C91432;
       line-height: 48px;
+      
+      font-family: 'The Bold Font';
+      text-transform: uppercase;
+      font-weight: bold;
     }
     .illustration {
       width: 100%;
