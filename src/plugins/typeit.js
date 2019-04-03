@@ -8,7 +8,7 @@ Vue.directive('typeit', {
       el.textContent = ''
       vNode.typeIt = new TypeIt(el, {
         strings: text.map(d => d.trim()) || '',
-        speed: 40,
+        speed: 20,
         afterComplete: () => {
           if (binding.value) binding.value()
         }

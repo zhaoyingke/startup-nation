@@ -1,11 +1,12 @@
 <template>
   <div class="home">
     <img alt="Startup logo" src="../assets/logo.png">
-    <p v-typeit>Bienvenue dans la Startup Nation ! Êtes-vous la prochaine licorne française ?</p>
+    <img alt="bonhomme" src="../assets/img/Idea Man Image.png">
+    <p v-typeit>Seriez-vous la prochaine licorne française ?</p>
     <router-link
       tag="button"
       to="game">
-      Je fonçe
+      Je fonce
     </router-link>
   </div>
 </template>
