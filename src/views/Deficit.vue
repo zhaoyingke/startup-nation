@@ -1,16 +1,16 @@
 <template>
   <div class="game">
-    <header-illustration title="You almost lost" />
+    <header-illustration title="Vous êtes en déficit" />
     <main class="box">
       <p
         v-typeit="() => typeItDone = true"
         class="text">
-        bla bla bla
+        Attention ! Vous 
       </p>
       <div
         v-if="typeItDone"
         class="actions">
-        <button @click="() => $router.go(-1)">Start again</button>
+        <button @click="() => $router.go(-1)">J'ai compris</button>
       </div>
       <gauges />
     </main>
@@ -22,7 +22,7 @@ import Gauges from '@/components/Gauges'
 import HeaderIllustration from '@/components/HeaderIllustration'
 
 export default {
-  name: 'lost',
+  name: 'deficit',
   components: {
     Gauges,
     HeaderIllustration

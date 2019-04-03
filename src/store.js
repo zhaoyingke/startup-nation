@@ -8,7 +8,17 @@ const money = store => {
   store.subscribe((mutation, state) => {
     if (state.money <= 0 && router.currentRoute.params.step > 4) {
       router.push({
-        name: 'lost'
+        name: 'deficit'
+      })
+    }
+  })
+}
+
+const investorPoints = store => {
+  store.subscribe((mutation, state) => {
+    if (state.investorPoints >= 20) {
+      router.push({
+        name: 'meeting_investors'
       })
     }
   })

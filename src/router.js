@@ -17,9 +17,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "game" */ './views/Game.vue')
     },
     {
-      path: '/lost',
-      name: 'lost',
-      component: () => import(/* webpackChunkName: "game" */ './views/Lost.vue')
+      path: '/deficit',
+      name: 'deficit',
+      component: () => import(/* webpackChunkName: "game" */ './views/Deficit.vue')
+    },
+    {
+      path: '/meeting_investors',
+      name: 'meeting_investors',
+      component: () => import(/* webpackChunkName: "game" */ './views/meeting_investors.vue')
     },
     {
       path: '/about',

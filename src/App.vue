@@ -49,7 +49,7 @@ button {
   border: 2px solid #245e85;
   text-transform: uppercase;
   padding: 12px 16px 8px 16px;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: bold;
   background-color: white;
   cursor: pointer;

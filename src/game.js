@@ -36,7 +36,7 @@ export default [{
   when: (state) => state.difficulty === 'hard'
 },
 {
-  message: `Vous vous êtes lancé.e dans la FoodTech (technologie alimentaire), l'un des secteurs les plus prometteurs et séduisants vis-à-vis du marché et des investisseurs. Vous avez identifié le market pains (douleur du marché) : la livraison à domicile des boissons. Vous créerez une plateforme pour adresser ce marché gigantesque et prometteur.`,
+  message: `Vous vous êtes lancé.e dans la FoodTech (technologie alimentaire), l'un des secteurs les plus prometteurs et séduisants vis-à-vis du marché et des investisseurs. Vous avez identifié le « market pain » (douleur du marché) : la livraison à domicile des boissons. Vous créerez une plateforme pour adresser ce marché gigantesque et prometteur.`,
   buttons: ['Je continue']
 },
 {
@@ -83,7 +83,7 @@ export default [{
   ]
 },
 {
-  message: `La réussite ne se fait guère seule. Deux de vos meilleurs amis ont exprimé leur intérêt à ce projet. Souhaitez-vous travaillez en équipe avec eux ?`,
+  message: `Deux de vos meilleurs amis ont exprimé leur intérêt à ce projet. Souhaitez-vous travaillez en équipe avec eux ?`,
   buttons: [
     {
       label: `Oui, l'union fait la force`,
@@ -112,14 +112,14 @@ export default [{
   ]
 },
 {
-  message: `Vous avez parlé de votre géniale idée avec votre famille, vos ami.e.s et votre réseau professionnel. Les grands esprits se rencontrent, et ils vous ont aidé.e en vous donnant un premier soutien financier.`,
+  message: `Les grands esprits se rencontrent. Votre famille et vos ami.e.s vous ont aidé.e en vous donnant un premier soutien financier.`,
   buttons: [{
     label: 'Ok',
-    action: (commit, state) => commit('addMoney', state.difficulty === 'hard' ? 500 : 250)
+    action: (commit, state) => commit('addMoney', state.difficulty === 'hard' ? 250 : 500)
   }]
 },
 {
-  message: `Certes l'idée de révolutionner le monde est une bonne chose, mais il faut aussi trouver un business model (modèle économique) rentable et durable pour que votre jeune pousse fonctionne, et il n'est jamais trop tôt de commencer à y réfléchir.`,
+  message: `L'idée de révolutionner le monde est une bonne chose, mais il faut aussi trouver un business model (modèle économique) rentable et durable pour que votre jeune pousse fonctionne, et il n'est jamais trop tôt de commencer à y réfléchir.`,
   buttons: [
     {
       label: `Oui, je m'y mets dès maintenant`,
@@ -128,7 +128,7 @@ export default [{
       }
     },
     {
-      label: `Non, c'est moins important pour le moment`
+      label: `Non, ce n'est pas le plus important pour le moment`
     }
   ]
 },
@@ -174,8 +174,29 @@ export default [{
 },
 // 15
 {
-  message: `Félicitations ! Vous venez de fabriquer l'appli JustDrink ! Faites des testes avant de la lancer officiellement dans le marché.`,
-  buttons: [`Très bien !`]
+  message: `Félicitations ! Vous venez de fabriquer le prototype de votre apple que vous intitulez <b>JustDrink</b>. Testez-le avant de vous attaquer au marché !`,
+  buttons: [
+    {
+      label: `J'ai hâte !`,
+      action: (commit) => {
+        commit('multiplyMoneyBy', 0.95)
+      }
+    }]
+},
+// 18
+{
+  message: `Un essai gratuit pourrait être bonne idée pour attirer plus de clients potentiels, mais aurait des coûts supplémentaires. Voulez-vous vous y mettre ? Vous pouvez désormais voir votre part de marché; conseils what is market share`,
+  buttons: [{
+    label: 'Très bonne idée !',
+    action: (commit, state) => {
+      commit('multiplyMoneyBy', state.difficulty === 'hard' ? 0.5 : 0.75)
+      commit('addReputationPoints', state.difficulty === `hard` ? 5 : 7)
+    }
+  },
+  {
+    label: `Ce n'est pas la peine`
+  }
+  ]
 },
 // 16
 {
@@ -191,33 +212,6 @@ export default [{
     {
       label: `Non, pas encore`
     }
-  ]
-},
-// 17
-{
-  message: `WE NEED MORE INFO ON THIS, OR JUST LISTEN TO OUR ITWS`,
-  buttons: [
-    {
-      label: `J'ai hâte !`,
-      action: (commit) => {
-        commit('multiplyMoneyBy', 0.95)
-      }
-    }
-  ]
-},
-// 18
-{
-  message: `Un essai gratuit pourrait être bonne idée pour attirer plus de clients potentiels, mais aurait des coûts supplémentaires. Voulez-vous vous y mettre ? Vous pouvez désormais voir votre part de marché; conseils what is market share`,
-  buttons: [{
-    label: 'Très bonne idée !',
-    action: (commit, state) => {
-      commit('multiplyMoneyBy', state.difficulty === 'hard' ? 0.5 : 0.75)
-      commit('addReputationPoints', state.difficulty === `hard` ? 5 : 7)
-    }
-  },
-  {
-    label: `Ce n'est pas la peine`
-  }
   ]
 },
 // 19
@@ -248,7 +242,7 @@ export default [{
       }
     },
     {
-      label: `Les papiers, en France ? Sérieur ?!`
+      label: `Les papiers, en France ? Sérieux ?!`
     }
   ]
 },
@@ -323,25 +317,25 @@ export default [{
 },
 // turn 24 fun event
 {
-  message: `Votre mère est très préoccupée: vous ne mangez pas assez, vous passez tout le temps à l'ordinateur, et ça fait longtemps qu'elle ne vous entend parler de quelque chose d'autre que le boulot. Elle en a parlé avec votre médicin conseil et il vous conseille de prendre une petite pause santé.`,
+  message: `Votre mère est très préoccupée de votre santé car vous êtes toujours devant l'ordinateur. Elle a pris rendez-vous avec votre médecin sans vous le dire à l'avance...`,
   buttons: [
     {
-      label: `Je suive le conseil du médicin et je prends quelque jour de pause du travail.`,
+      label: `Je suis le conseil du médicin et prends quelques jours de congé`,
       action: (commit) => {
         commit('multiplyMoneyBy', 0.95)
       }
     },
     {
-      label: `J'appelle ma mère et je lui crie dessus parce-que je n'ai marre de ses préoccupations inutiles. Tout mes collègues m'entendent.`,
+      label: `J'appelle ma mère pour lui dire de me laisser tranquille.`,
       action: (commit) => {
         commit('addReputationPoints', -2)
       }
     },
     {
-      label: `J'ignore tout simplement les conseils (et aussi les petits symptomes de la fatigue que effectivement je sent)`
+      label: `J'ignore les conseils médicaux malgré ma santé dégradante.`
     },
     {
-      label: `J'achète en ligne des bizarres pillules que promettent de me faire oublier la fatigue tout de suite.`,
+      label: `Je m'auto-diagnotise et prends les comprimés que j'avais achetés en ligne`,
       // find a way to go to another page that says "Turns out those weird pills were actually bad for your health. You have to stay home sick for two weeks."
       action: (commit) => {
         commit('multiplyMoneyBy', 0.90)
@@ -349,14 +343,15 @@ export default [{
     }
   ]
 },
-{
-  message: `Votre deuxième bilan est désormais disponible. Cliquez ici pour voir plus de détails.`,
-  buttons: [`Parfait!`]
-},
+// Maybe instead of giving a balances heet from time to time we can generate another page at this stage
+// {
+//   message: `Votre deuxième bilan est désormais disponible. Cliquez ici pour voir plus de détails.`,
+//   buttons: [`Parfait!`]
+// },
 // 25 On a dit qu'on le fait pas
 // 26
 {
-  message: `Félicitations ! Vous venez de lancer la V2 de votre appli`,
+  message: `Félicitations ! Vous venez de lancer la V2 de votre appli !`,
   buttons: [
     {
       label: 'Magnifique !',
@@ -378,7 +373,7 @@ export default [{
       }
     },
     {
-      label: 'Mieux d`etre seul que mal accompagné',
+      label: 'Mieux d`être seul que mal accompagné',
       action: (commit) => {
         commit('addInvestorPoints', 1)
         commit('multiplyMoneyBy', 1.05)
@@ -542,7 +537,7 @@ export default [{
 
 // 34 fun (or panick) event
 {
-  message: `URGENCE ! Vous avez rendez-vous aved un investisseur dans une heure, mais votre collègue étourdi a perdu les slides que vous devrez présenter ! Que faire maintenant ?`,
+  message: `URGENT ! Vous avez rendez-vous avec un investisseur dans une heure, mais votre collègue étourdi a perdu les slides que vous devrez présenter ! Que faire maintenant ?`,
   buttons: [
     {
       label: `Je le punis en l'envoyer parler avec l'investisseur`,
@@ -553,7 +548,7 @@ export default [{
       }
     },
     {
-      lable: `J'improvise. Mes cours de théâtre ne sont pas pour rien.`
+      lable: `J'improvise. Mes cours de théâtre ne sont pas pour rien`
     },
     {
       label: `Je reporte le rendez-vous`
