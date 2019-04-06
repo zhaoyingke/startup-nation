@@ -5,7 +5,7 @@
       <p
         v-typeit="() => typeItDone = true"
         class="text">
-        Attention ! Vous 
+        Attention ! Vous
       </p>
       <div
         v-if="typeItDone"

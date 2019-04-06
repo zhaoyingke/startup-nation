@@ -34,7 +34,6 @@ html, body {
   // font-weight: bold;
   // font-family: 'The Bold Font';
   // text-align: center;
-  
 }
 span{
   .ti-container {
@@ -56,7 +55,6 @@ button {
   color: #245e85;
   outline: none;
   text-align: center;
-  
   &:hover {
     background-color: transparent;
   }

@@ -6,7 +6,7 @@
   />
 </template>
 <script>
-import AnimatedNumber from "animated-number-vue"
+import AnimatedNumber from 'animated-number-vue'
 
 export default {
   name: 'Money',
@@ -19,8 +19,8 @@ export default {
     }
   },
   methods: {
-    formatToPrice(value) {
-      return `${value.toFixed(0)}`;
+    formatToPrice (value) {
+      return `${value.toFixed(0)}`
     }
   }
 }
