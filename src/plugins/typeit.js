@@ -5,7 +5,7 @@ import once from 'lodash/once'
 
 Vue.directive('typeit', {
   inserted: (el, binding, vNode) => {
-    const strings = el.textContent.match(/.*?[.?!](\s|$)/gu).map(d => `<p>${d.trim()}</p>` ).join('')
+    const strings = el.textContent.match(/.*?[.?!](\s|$)/gu).map(d => `<p>${d.trim()}</p>`).join('')
     if (strings) {
       el.textContent = ''
       vNode.typeIt = new TypeIt(el, {
@@ -22,7 +22,7 @@ Vue.directive('typeit', {
       binding.value()
     }
 
-    const complete = () => {
+    const complete = () => {
       if (vNode.typeIt.is('started')) {
         vNode.typeIt.reset()
         el.innerHTML = strings
