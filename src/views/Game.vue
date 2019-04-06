@@ -130,11 +130,6 @@ export default {
     padding: 24px;
   }
 
-  button + button {
-    margin-left: 5px;
-    text-align: center;
-  }
-
   .game {
 
     &__hint {
