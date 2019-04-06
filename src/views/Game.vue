@@ -21,6 +21,7 @@
       </div>
       <gauges v-if="step >= 5" />
     </main>
+    <p v-if="!typeItDone" class="game__hint">Tapez sur espace afficher le text complet</p>
   </div>
 </template>
 
@@ -132,5 +133,14 @@ export default {
   button + button {
     margin-left: 5px;
     text-align: center;
+  }
+
+  .game {
+
+    &__hint {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-align: center;
+    }
   }
 </style>
