@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -34,13 +34,23 @@ html, body {
   // font-weight: bold;
   // font-family: 'The Bold Font';
   // text-align: center;
+
 }
+
+p {
+  margin-top: 0;
+}
+
 span{
   .ti-container {
     font-family: 'Questrial', sans-serif;
     font-size: 20;
     text-transform: none;
     text-align: left;
+  }
+
+  .ti-container::before {
+    display: none;
   }
 }
 button {
@@ -55,6 +65,7 @@ button {
   color: #245e85;
   outline: none;
   text-align: center;
+
   &:hover {
     background-color: transparent;
   }

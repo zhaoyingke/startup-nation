@@ -4,12 +4,12 @@
       :title="header.title"
       :illustration="header.illustration" />
     <main class="box">
-      <p
+      <div
         :key="step"
         v-typeit="() => typeItDone = true"
         class="text">
         {{ typeof currentStep.message === 'string' ? currentStep.message : currentStep.message($store.state) }}
-      </p>
+      </div>
       <div
         v-if="typeItDone"
         class="actions">
