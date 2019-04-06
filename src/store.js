@@ -14,15 +14,15 @@ const money = store => {
   })
 }
 
-// const investorPoints = store => {
-//   store.subscribe((mutation, state) => {
-//     if (state.investorPoints >= 20) {
-//       router.push({
-//         name: 'meeting_investors'
-//       })
-//     }
-//   })
-// }
+const investorPoints = store => {
+  store.subscribe((mutation, state) => {
+    if (state.investorPoints >= 20) {
+      router.push({
+        name: 'meeting_investors'
+      })
+    }
+  })
+}
 
 export default new Vuex.Store({
   state: {
@@ -62,6 +62,7 @@ export default new Vuex.Store({
   },
   actions: {},
   plugins: [
-    money
+    money,
+    investorPoints
   ]
 })
