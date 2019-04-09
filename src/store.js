@@ -4,26 +4,6 @@ import router from './router'
 
 Vue.use(Vuex)
 
-const money = store => {
-  store.subscribe((mutation, state) => {
-    if (state.money <= 0 && router.currentRoute.params.step > 4) {
-      router.push({
-        name: 'deficit'
-      })
-    }
-  })
-}
-
-const investorPoints = store => {
-  store.subscribe((mutation, state) => {
-    if (state.investorPoints >= 20) {
-      router.push({
-        name: 'meeting_investors'
-      })
-    }
-  })
-}
-
 export default new Vuex.Store({
   state: {
     money: 0,
@@ -34,21 +14,21 @@ export default new Vuex.Store({
     autoFinance: null // Can be between 0 and 1, or null
   },
   getters: {
-    investorNote: state => {
-      if (state.investorPoints > 90) {
-        return 'AAA'
-      }
-      if (state.investorPoints > 80) {
-        return 'AA'
-      }
-      if (state.investorPoints > 70) {
-        return 'A'
-      }
-      if (state.investorPoints > 50) {
-        return 'B'
-      }
-      return 'C'
-    }
+    // investorNote: state => {
+    //   if (state.investorPoints > 90) {
+    //     return 'AAA'
+    //   }
+    //   if (state.investorPoints > 80) {
+    //     return 'AA'
+    //   }
+    //   if (state.investorPoints > 70) {
+    //     return 'A'
+    //   }
+    //   if (state.investorPoints > 50) {
+    //     return 'B'
+    //   }
+    //   return 'C'
+    // }
   },
   mutations: {
     setDifficulty (state, payload) {
@@ -79,7 +59,20 @@ export default new Vuex.Store({
   },
   actions: {},
   plugins: [
-    money,
-    investorPoints
+    store => {
+      store.subscribe((mutation, state) => {
+        if (state.money < 0) {
+          return router.push({
+            name: 'deficit'
+          })
+        }
+
+        if (state.investorPoints >= 20) {
+          return router.push({
+            name: 'investor'
+          })
+        }
+      })
+    }
   ]
 })

@@ -10,7 +10,7 @@
       <div
         v-if="typeItDone"
         class="actions">
-        <button @click="() => $router.go(-1)">J'ai compris</button>
+        <button @click="click">J'ai compris</button>
       </div>
       <gauges />
     </main>
@@ -34,7 +34,11 @@ export default {
   },
   computed: {},
   watch: {},
-  methods: {}
+  methods: {
+    click () {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 

@@ -21,7 +21,7 @@
       </div>
       <gauges v-if="step >= 5" />
     </main>
-    <p v-if="!typeItDone" class="game__hint">Tapez sur espace afficher le text complet</p>
+    <p v-if="!typeItDone" class="game__hint">Appuyez sur espace pour afficher le texte complet</p>
   </div>
 </template>
 
@@ -107,13 +107,16 @@ export default {
   },
   methods: {
     next (action) {
+      const routeName = this.$route.name
       if (action) action(this.$store.commit, this.$store.state)
-      if (this.filteredSteps[this.step + 1]) {
-        this.step++
-      } else {
-        this.$router.push({
-          name: 'home'
-        })
+      if (this.$route.name === routeName) {
+        if (this.filteredSteps[this.step + 1]) {
+          this.step++
+        } else {
+          this.$router.push({
+            name: 'home'
+          })
+        }
       }
     }
   }
