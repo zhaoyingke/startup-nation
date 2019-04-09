@@ -624,6 +624,7 @@ export default [{
 },
 // 38
 {
+  advice: `a piece of advice`,
   message: `Un plan de réduction permettrait d'attirer de nouveaux clients et fidéliser les anciens, mais aurait des coûts supplémentaires. Voulez-vous vous y mettre ?`,
   buttons: [
     {
