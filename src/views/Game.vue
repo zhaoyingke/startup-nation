@@ -1,5 +1,18 @@
 <template>
   <div class="game">
+    <button
+      v-if="currentStep.advice"
+      @click="showModal = !showModal"
+      class="speech">
+      <img :src="require(`@/assets/img/speech.png`)">
+    </button>
+    <modal
+      v-if="showModal && currentStep.advice"
+      @close="showModal = false">
+      <article slot="body">
+        {{ currentStep.advice }}
+      </article>
+    </modal>
     <header-illustration
       :title="header.title"
       :illustration="header.illustration" />
@@ -29,17 +42,20 @@
 import GameSteps from '@/game'
 import HeaderIllustration from '@/components/HeaderIllustration'
 import Gauges from '@/components/Gauges'
+import Modal from '@/components/Modal'
 
 export default {
   name: 'game',
   components: {
     HeaderIllustration,
-    Gauges
+    Gauges,
+    Modal
   },
   data () {
     return {
       steps: GameSteps,
-      typeItDone: false
+      typeItDone: false,
+      showModal: false
     }
   },
   computed: {
@@ -139,6 +155,17 @@ export default {
       font-size: 0.9rem;
       opacity: 0.8;
       text-align: center;
+    }
+  }
+  .speech {
+    float: right;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin: 15px;
+    width: 45px;
+    img {
+      width: 100%;
     }
   }
 </style>
