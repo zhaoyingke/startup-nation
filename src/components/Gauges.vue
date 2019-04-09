@@ -7,6 +7,8 @@
 </template>
 <script>
 import Money from '@/components/Money'
+// import investorPoints from '@/components/investorPoints'
+//  import reputationPoints from '@/components/reputationPoints'
 
 export default {
   name: 'Gauges',
