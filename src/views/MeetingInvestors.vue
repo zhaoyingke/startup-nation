@@ -10,7 +10,7 @@
       <div
         v-if="typeItDone"
         class="actions">
-        <button @click="() => $router.go(-1)">J'attends leurs réponse avec impatience...</button>
+        <button @click="click">J'attends leurs réponse avec impatience...</button>
       </div>
       <gauges />
     </main>
@@ -34,7 +34,12 @@ export default {
   },
   computed: {},
   watch: {},
-  methods: {}
+  methods: {
+    click () {
+      this.$store.commit('addInvestorPoints', -10)
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 

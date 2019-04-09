@@ -4,9 +4,9 @@
       <animated-number
         :value="$store.state.money" />
     </div>
-    <div class="gauge investors">
+    <!-- <div class="gauge investors">
       <span>{{ $store.getters.investorNote }}</span>
-    </div>
+    </div> -->
     <div class="gauge reputation">
       <animated-number
         :value="$store.state.reputationPoints" />
