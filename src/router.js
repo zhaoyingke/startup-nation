@@ -24,7 +24,7 @@ export default new Router({
     {
       path: '/meeting_investors',
       name: 'meeting_investors',
-      component: () => import(/* webpackChunkName: "game" */ './views/meeting_investors.vue')
+      component: () => import(/* webpackChunkName: "game" */ './views/MeetingInvestors.vue')
     },
     {
       path: '/about',

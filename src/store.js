@@ -33,6 +33,23 @@ export default new Vuex.Store({
     difficulty: null, // Can be easy, hard, or null
     autoFinance: null // Can be between 0 and 1, or null
   },
+  getters: {
+    investorNote: state => {
+      if (state.investorPoints > 90) {
+        return 'AAA'
+      }
+      if (state.investorPoints > 80) {
+        return 'AA'
+      }
+      if (state.investorPoints > 70) {
+        return 'A'
+      }
+      if (state.investorPoints > 50) {
+        return 'B'
+      }
+      return 'C'
+    }
+  },
   mutations: {
     setDifficulty (state, payload) {
       state.difficulty = payload
@@ -62,6 +79,7 @@ export default new Vuex.Store({
   },
   actions: {},
   plugins: [
-    money
+    money,
+    investorPoints
   ]
 })

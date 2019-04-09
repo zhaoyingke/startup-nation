@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -12,10 +12,21 @@
   font-weight: bold;
   font-style: normal;
 }
-html, body {
-  background-color: #cedbe6;
-  height: 100%;
+
+html {
+  padding: 0;
+  margin: 0;
 }
+
+*, ::after, ::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #cedbe6;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,7 +36,7 @@ html, body {
 
   height: 100%;
   max-width: 800px;
-  margin: auto;
+  margin: 5px auto;
 
   font-size: 20px;
   line-height: 32px;
@@ -34,8 +45,13 @@ html, body {
   // font-weight: bold;
   // font-family: 'The Bold Font';
   // text-align: center;
-  
+
 }
+
+p {
+  margin-top: 0;
+}
+
 span{
   .ti-container {
     font-family: 'Questrial', sans-serif;
@@ -43,7 +59,12 @@ span{
     text-transform: none;
     text-align: left;
   }
+
+  .ti-container::before {
+    display: none;
+  }
 }
+
 button {
   font-family: 'The Bold Font';
   border: 2px solid #245e85;
@@ -56,7 +77,9 @@ button {
   color: #245e85;
   outline: none;
   text-align: center;
-  
+  display: inline-block;
+  margin: 0 5px 5px 0;
+
   &:hover {
     background-color: transparent;
   }

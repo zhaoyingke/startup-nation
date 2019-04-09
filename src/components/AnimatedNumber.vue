@@ -1,17 +1,17 @@
 <template>
-  <animated-number
+  <animated-number-vue
     :value="value"
-    :formatValue="formatToPrice"
+    :formatValue="removeDecimals"
     :duration="300"
   />
 </template>
 <script>
-import AnimatedNumber from "animated-number-vue"
+import AnimatedNumberVue from 'animated-number-vue'
 
 export default {
   name: 'Money',
   components: {
-    AnimatedNumber
+    AnimatedNumberVue
   },
   props: {
     value: {
@@ -19,8 +19,8 @@ export default {
     }
   },
   methods: {
-    formatToPrice(value) {
-      return `${value.toFixed(0)}`;
+    removeDecimals (value) {
+      return `${value.toFixed(0)}`
     }
   }
 }

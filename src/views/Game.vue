@@ -4,12 +4,12 @@
       :title="header.title"
       :illustration="header.illustration" />
     <main class="box">
-      <p
+      <div
         :key="step"
         v-typeit="() => typeItDone = true"
         class="text">
         {{ typeof currentStep.message === 'string' ? currentStep.message : currentStep.message($store.state) }}
-      </p>
+      </div>
       <div
         v-if="typeItDone"
         class="actions">
@@ -21,6 +21,7 @@
       </div>
       <gauges v-if="step >= 5" />
     </main>
+    <p v-if="!typeItDone" class="game__hint">Tapez sur espace afficher le text complet</p>
   </div>
 </template>
 
@@ -129,8 +130,12 @@ export default {
     padding: 24px;
   }
 
-  button + button {
-    margin-left: 5px;
-    text-align: center;
+  .game {
+
+    &__hint {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-align: center;
+    }
   }
 </style>

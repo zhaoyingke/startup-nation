@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Startup logo" src="../assets/logo.png">
-    <img alt="bonhomme" src="../assets/img/Idea Man Image.png">
+    <img alt="bonhomme" src="../assets/img/idea-man-image.png">
     <p v-typeit>Seriez-vous la prochaine licorne française ?</p>
     <router-link
       tag="button"

@@ -47,8 +47,4 @@ export default {
     border: 4px solid #245e85;
     padding: 24px;
   }
-
-  button + button {
-    margin-left: 5px;
-  }
 </style>
