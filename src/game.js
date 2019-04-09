@@ -1,4 +1,5 @@
 export default [{
+  advice: `a piece of advice`,
   message: `Ce jeu d'actualités est basé sur de vrais reportages, y compris des interviews avec des entrepreneurs, des investisseurs et des conseillers en création d'entreprise. Nous avons simplifié ce processus afin de mieux expliquer les étapes et les enjeux de l'entreprenariat. Or, dans la vraie vie, l'ambition entrepreneuriale implique bien plus de labeur et de savoir-faire...`,
   buttons: [`J'ai compris`]
 },

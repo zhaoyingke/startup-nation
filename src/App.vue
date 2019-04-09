@@ -1,8 +1,42 @@
 <template>
   <div id="app">
+    <button
+      @click="toggleSound"
+      class="toggle-sound">
+      <span v-if="musicPaused">🔈</span>
+      <span v-else>🔇</span>
+    </button>
+    <audio
+      ref="audio"
+      autoplay
+      loop>
+      <source :src="require(`@/assets/startup-nation-theme.mp3`)" type="audio/mp3">
+    </audio>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  name: 'app',
+  data () {
+    return {
+      musicPaused: false
+    }
+  },
+  methods: {
+    toggleSound () {
+      if (this.$refs.audio.paused) {
+        this.$refs.audio.play()
+        this.musicPaused = false
+      } else {
+        this.$refs.audio.pause()
+        this.musicPaused = true
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @font-face {
@@ -83,5 +117,16 @@ button {
   &:hover {
     background-color: transparent;
   }
+}
+
+.toggle-sound {
+  background-color: transparent;
+  border: none;
+  float: right;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 5px;
 }
 </style>
