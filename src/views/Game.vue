@@ -19,7 +19,7 @@
           @click="next(button.action)"
         >{{ button.label || button }}</button>
       </div>
-      <gauges v-if="step >= 5" />
+      <gauges />
     </main>
     <p v-if="!typeItDone" class="game__hint">Appuyez sur espace pour afficher le texte complet</p>
   </div>

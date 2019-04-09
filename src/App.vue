@@ -35,7 +35,7 @@ body {
   color: #2c3e50;
 
   height: 100%;
-  max-width: 800px;
+  max-width: 500px;
   margin: 5px auto;
 
   font-size: 20px;

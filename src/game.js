@@ -548,7 +548,7 @@ export default [{
       }
     },
     {
-      lable: `J'improvise. Mes cours de théâtre ne sont pas pour rien`
+      label: `J'improvise. Mes cours de théâtre ne sont pas pour rien`
     },
     {
       label: `Je reporte le rendez-vous`

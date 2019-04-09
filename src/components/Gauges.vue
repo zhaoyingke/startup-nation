@@ -1,16 +1,19 @@
 <template>
   <div class="gauges">
-    <div class="gauge money">
+    <div
+      v-if="step >= 5"
+      class="gauge money">
       <animated-number
         :value="$store.state.money" />
     </div>
     <!-- <div class="gauge investors">
       <span>{{ $store.getters.investorNote }}</span>
     </div> -->
-    <div class="gauge reputation">
+    <div
+      v-if="step >= 19"
+      class="gauge reputation">
       <animated-number
         :value="$store.state.reputationPoints" />
-        <span class="label">clients</span>
     </div>
   </div>
 </template>
@@ -21,6 +24,11 @@ export default {
   name: 'Gauges',
   components: {
     AnimatedNumber
+  },
+  computed: {
+    step () {
+      return this.$route.params.step ? parseInt(this.$route.params.step) : 0
+    }
   }
 }
 </script>
@@ -39,23 +47,24 @@ export default {
       height: 70px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
       color: white;
-      font-size: 28px;
       margin: 5px;
+      span {
+        text-align: center;
+        background-color: #C91432;
+        border-radius: 5px;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 4px 10px;
+        font-weight: bold;
+      }
 
       &.money {
         background-image: url('../assets/img/gold-coin.png');
       }
       &.investors {
         background-color: black;
-      }
-      &.reputation {
-        color: black;
-        font-size: 18px;
-        .label {
-          margin-left: 3px;
-        }
       }
     }
   }
