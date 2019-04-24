@@ -10,7 +10,7 @@
       <span>{{ $store.getters.investorNote }}</span>
     </div> -->
     <div
-      v-if="step >= 19"
+      v-if="step >= 13"
       class="gauge reputation">
       <animated-number
         :value="$store.state.reputationPoints" />
@@ -63,8 +63,8 @@ export default {
       &.money {
         background-image: url('../assets/img/gold-coin.png');
       }
-      &.investors {
-        background-color: black;
+      &.reputation {
+        background-image: url('../assets/img/smiley.png');
       }
     }
   }

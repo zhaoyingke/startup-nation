@@ -27,9 +27,29 @@ export default new Router({
       component: () => import(/* webpackChunkName: "investor" */ './views/MeetingInvestors.vue')
     },
     {
+      path: '/reputation',
+      name: 'reputation',
+      component: () => import(/* webpachChunkName: "reputation" */ './views/GettingPopular.vue')
+    },
+    {
+      path: '/concours',
+      name: 'concours',
+      component: () => import(/* webpachChunkName: "concours" */ './views/Concours.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    // {
+    //   path: '/almost_bankrupted',
+    //   name: 'almost_bankrupted',
+    //   component: () => import(/* webpackChunkName: "about" */ './views/almost_bankrupted.vue')
+    // },
+    {
+      path: '/fin',
+      name: 'fin',
+      component: () => import(/* webpackChunkName: "about" */ './views/fin.vue')
     }
   ]
 })

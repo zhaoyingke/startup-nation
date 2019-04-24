@@ -164,6 +164,7 @@ export default {
     padding: 0px;
     margin: 15px;
     width: 45px;
+    font-size: 16px;
     img {
       width: 100%;
     }

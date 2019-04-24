@@ -4,6 +4,7 @@ import router from './router'
 
 import Finance from 'financejs'
 import { median } from 'd3-array'
+// import { setPriority } from 'os'
 
 const { NPV } = new Finance()
 
@@ -70,6 +71,30 @@ export default new Vuex.Store({
             name: 'investor'
           })
         }
+
+        if (state.reputationPoints >= 20) {
+          return router.push({
+            name: 'reputation'
+          })
+        }
+
+        if ((state.reputationPoints >= 20) || (state.investorPoints >= 20)) {
+          return router.push({
+            name: 'concours'
+          })
+        }
+
+        // if ((state.money <= 50) || (state.money > 0)) {
+        //   return router.push({
+        //     name: 'almost_bankrupted'
+        //   })
+        // }
+
+        // if (state.s > 50) {
+        //   return router.push({
+        //     name: 'fin'
+        //   })
+        // }
       })
     }
   ]

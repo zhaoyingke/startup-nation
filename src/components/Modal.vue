@@ -54,7 +54,7 @@ export default {
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
     transition: all .3s ease;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Questrial', sans-serif;
   }
 
   .modal-footer {
@@ -68,6 +68,9 @@ export default {
 
   .modal-body {
     margin: 20px 0;
+    overflow-y: auto;
+    max-height: 400px;
+
   }
 
   // .modal-default-button {

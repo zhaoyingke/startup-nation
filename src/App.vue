@@ -122,11 +122,11 @@ button {
 .toggle-sound {
   background-color: transparent;
   border: none;
-  float: right;
+  float: left;
   display: block;
   position: absolute;
   top: 0px;
-  right: 0px;
+  left: 0px;
   margin: 5px;
 }
 </style>

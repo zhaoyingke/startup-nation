@@ -1,16 +1,16 @@
 <template>
   <div class="game">
-    <header-illustration title="rencontrer un investisseur"/>
+    <header-illustration title="Vous êtes presque en déficit" />
     <main class="box">
       <p
         v-typeit="() => typeItDone = true"
         class="text">
-        Félicitations ! Votre entreprise a attiré l'attention d'un fond de capital-risque. Allez leur pitcher votre projet pour un éventuel soutien financier pour votre entreprise !
+        Attention ! Vous avez moins de 100 pieces d'or ! Même si le déficit ne tue pas l'entreprise, faites attention tout de même !
       </p>
       <div
         v-if="typeItDone"
         class="actions">
-        <button @click="click">J'attends leurs réponse avec impatience...</button>
+        <button @click="click">J'ai compris</button>
       </div>
       <gauges />
     </main>
@@ -22,7 +22,7 @@ import Gauges from '@/components/Gauges'
 import HeaderIllustration from '@/components/HeaderIllustration'
 
 export default {
-  name: 'meeting_investors',
+  name: 'almost_bankrupted',
   components: {
     Gauges,
     HeaderIllustration
@@ -32,15 +32,11 @@ export default {
       typeItDone: false
     }
   },
-  computed: {
-    header() {illustration: 'scaling-image.png'}
-  },
+  computed: {},
   watch: {},
   methods: {
     click () {
-      this.$store.commit('addInvestorPoints', -15)
-      this.$store.commit('addMoney', Math.floor(Math.random() * 10) * 16 )
-      this.$router.go(-1)
+        this.$router.go(-1)
     }
   }
 }
