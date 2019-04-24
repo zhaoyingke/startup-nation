@@ -1,4 +1,4 @@
-// import router from './router'
+
 // 0
 export default [{
   message: `Ce jeu est basé sur des reportages et des interviews avec des entrepreneurs, des investisseurs et des conseillers en création d'entreprise. Nous avons simplifié les étapes pour montrer les enjeux de l'entreprenariat. Dans la vraie vie, l'ambition entrepreneuriale implique bien plus de labeur, de savoir-faire, et de chance…`,
@@ -942,9 +942,6 @@ Incubateurs, accélérateurs ou pépinières d’entreprises`,
       action: (commit) => {
         commit('addReputationPoints', 5)
         commit('multiplyMoneyBy', 1.05)
-        // return router.push({
-        //   name: 'fin'
-        // })
       }
     },
     {
@@ -952,9 +949,6 @@ Incubateurs, accélérateurs ou pépinières d’entreprises`,
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
         commit('addReputationPoints', 3)
-        // return router.push({
-        //   name: 'fin'
-        // })
       }
     },
     {
@@ -962,9 +956,6 @@ Incubateurs, accélérateurs ou pépinières d’entreprises`,
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
         commit('addReputationPoints', -5)
-        // return router.push({
-        //   name: 'fin'
-        // })
       }
     }
   ]

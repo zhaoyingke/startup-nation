@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import router from './router'
-import GameSteps from '@/game'
 
-import Finance from 'financejs'
-import { median } from 'd3-array'
-// import { setPriority } from 'os'
+// import Finance from 'financejs'
+// import { median } from 'd3-array'
 
-const { NPV } = new Finance()
+// const { NPV } = new Finance()
 
 Vue.use(Vuex)
 
@@ -18,15 +16,15 @@ export default new Vuex.Store({
     marketShare: 0, // Can be between 0 and 1
     reputationPoints: 0,
     investorPoints: 0,
-    difficulty: null, // Can be easy, hard, or null
-    autoFinance: null, // Can be between 0 and 1, or null
+    difficulty: 'easy', // Can be easy, hard
+    autoFinance: 0, // Can be between 0 and 1
     growthRate: 3.5
   },
   getters: {
-    lastMoneyTurns: state => state.moneyHistory.slice(Math.max(-state.moneyHistory.length, -20)),
-    medianLastMoneyTurns: (_, getters) => median(getters.lastMoneyTurns.sort()),
-    initialInvestment: (_, getters) => getters.medianLastMoneyTurns * getters.lastMoneyTurns.length * -1,
-    npv: (state, getters) => NPV(state.growthRate, getters.initialInvestment, ...getters.lastMoneyTurns)
+    // lastMoneyTurns: state => state.moneyHistory.slice(Math.max(-state.moneyHistory.length, -20)),
+    // medianLastMoneyTurns: (_, getters) => median(getters.lastMoneyTurns.sort()),
+    // initialInvestment: (_, getters) => getters.medianLastMoneyTurns * getters.lastMoneyTurns.length * -1,
+    // npv: (state, getters) => NPV(state.growthRate, getters.initialInvestment, ...getters.lastMoneyTurns)
   },
   mutations: {
     setDifficulty (state, payload) {
@@ -37,10 +35,12 @@ export default new Vuex.Store({
       state.moneyHistory.push(state.money)
     },
     multiplyMoneyBy (state, payload) {
-      if (state.difficulty === 'hard') {
-        state.money = state.money * (payload * 0.95)
-      } else {
-        state.money = state.money * payload
+      if (state.money > 0) {
+        if (state.difficulty === 'hard') {
+          state.money = state.money * (payload * 0.95)
+        } else {
+          state.money = state.money * payload
+        }
       }
       state.moneyHistory.push(state.money)
     },
@@ -82,18 +82,6 @@ export default new Vuex.Store({
         if ((state.reputationPoints >= 20) || (state.investorPoints >= 20)) {
           return router.push({
             name: 'concours'
-          })
-        }
-
-        // if ((state.money <= 50) || (state.money > 0)) {
-        //   return router.push({
-        //     name: 'almost_bankrupted'
-        //   })
-        // }
-
-        if (GameSteps.step === 46) {
-          return router.push({
-            name: 'fin'
           })
         }
       })

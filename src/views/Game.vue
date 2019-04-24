@@ -123,15 +123,17 @@ export default {
   },
   methods: {
     next (action) {
+      if (this.step === 45) {
+        this.$router.push({
+          name: 'fin'
+        })
+        return
+      }
       const routeName = this.$route.name
       if (action) action(this.$store.commit, this.$store.state)
       if (this.$route.name === routeName) {
         if (this.filteredSteps[this.step + 1]) {
           this.step++
-        } else {
-          this.$router.push({
-            name: 'home'
-          })
         }
       }
     }

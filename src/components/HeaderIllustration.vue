@@ -3,7 +3,7 @@
     <h2 v-if="title">{{ title }}</h2>
     <img
       v-if="illustration"
-      :src="require(`../assets/img/${illustration}`)"
+      :src="require(`@/assets/img/${illustration}`)"
       class="illustration">
   </header>
 </template>
