@@ -1,6 +1,6 @@
 <template>
   <div class="game">
-    <header-illustration title="Participez à un concours startup !" />
+    <header-illustration title="Participez à un concours startup !" />
     <main class="box">
       <p
         v-typeit="() => typeItDone = true"
@@ -39,19 +39,19 @@ export default {
   methods: {
     nothing () {
       this.$router.go(-1)
-      this.$store.commit(addReputationPoints, -10)
-      this.$store.commit(addInvestorPoints, -10)
+      this.$store.commit('addReputationPoints', -10)
+      this.$store.commit('addInvestorPoints', -10)
     },
     free () {
       this.$router.go(-1)
-      this.$store.commit(addReputationPoints, -8)
-      this.$store.commit(addInvestorPoints, -10)
+      this.$store.commit('addReputationPoints', -8)
+      this.$store.commit('addInvestorPoints', -10)
     },
     prime () {
       this.$router.go(-1)
-      this.$store.commit(addReputationPoints, -10)
-      this.$store.commit(addInvestorPoints, -8)
-      this.$store.commit(addMoney, Math.floor(Math.random() * 10) * 8)
+      this.$store.commit('addReputationPoints', -10)
+      this.$store.commit('addInvestorPoints', -8)
+      this.$store.commit('addMoney', Math.floor(Math.random() * 10) * 8)
     }
   }
 }

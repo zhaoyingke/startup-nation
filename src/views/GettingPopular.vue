@@ -5,7 +5,7 @@
       <p
         v-typeit="() => typeItDone = true"
         class="text">
-        On est en 🔥 ! Tout le monde parle de votre startup. Quoi faire de toutes ces nouvelles opportunités?
+        On est en 🔥 ! Tout le monde parle de votre startup. Quoi faire de toutes ces nouvelles opportunités?
       </p>
       <div
         v-if="typeItDone"
@@ -40,21 +40,21 @@ export default {
   watch: {},
   methods: {
     nothing () {
-       this.$store.commit('addReputationPoints', -16)
-       this.$router.go(-1) 
-    },  
+      this.$store.commit('addReputationPoints', -16)
+      this.$router.go(-1)
+    },
     party () {
       this.$store.commit('addReputationPoints', -15)
-      this.$store.commit('multiplyMoneyBy', .99)
+      this.$store.commit('multiplyMoneyBy', 0.99)
       this.$router.go(-1)
     },
     press_conf () {
       this.$store.commit('addReputationPoints', -15)
-      this.$router.go(-1) 
+      this.$router.go(-1)
     },
     bragging () {
       this.$store.commit('addReputationPoints', -25)
-      this.$router.go(-1)  
+      this.$router.go(-1)
     }
   }
 }

@@ -33,13 +33,17 @@ export default {
     }
   },
   computed: {
-    header() {illustration: 'scaling-image.png'}
+    header () {
+      return {
+        illustration: 'scaling-image.png'
+      }
+    }
   },
   watch: {},
   methods: {
     click () {
       this.$store.commit('addInvestorPoints', -15)
-      this.$store.commit('addMoney', Math.floor(Math.random() * 10) * 16 )
+      this.$store.commit('addMoney', Math.floor(Math.random() * 10) * 16)
       this.$router.go(-1)
     }
   }

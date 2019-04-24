@@ -1,6 +1,6 @@
 <template>
   <div class="game">
-    <header-illustration  
+    <header-illustration
       :title="header.title"
       :illustration="header.illustration"/>
     <main class="box">
@@ -26,9 +26,6 @@
 <script>
 import Gauges from '@/components/Gauges'
 import HeaderIllustration from '@/components/HeaderIllustration'
-import state from '@/store.js'
-import getters from '@/store.js'
-import VueShareSocial from 'vue-share-social'
 
 export default {
   name: 'fin',
@@ -43,67 +40,61 @@ export default {
   },
   computed: {
     header () {
-      if (state.money > 1000) {
+      if (this.$store.state.money > 1000) {
         return {
-          title:'Continuer comme tel...',
+          title: 'Continuer comme tel...',
           illustration: '@/assets/img/Continue.png'
         }
       }
 
-      if ((state.investorPoints > 16) || ( getters.npv > 0)) {
+      if ((this.$store.state.investorPoints > 16) || (this.$store.getters.npv > 0)) {
         return {
-          title:'Introduction en bourse',
-          illustration:'@/assets/img/ipo.png'
+          title: 'Introduction en bourse',
+          illustration: '@/assets/img/ipo.png'
         }
       }
 
-      if ((state.reputationPoints > 16) || (state.investorPoints > 10)) {
+      if ((this.$store.state.reputationPoints > 16) || (this.$store.state.investorPoints > 10)) {
         return {
-          title:`Vous faire acheter par un concurrent`,
-          illustration:`@/assets/img/meetinginvestors.png`
+          title: `Vous faire acheter par un concurrent`,
+          illustration: `@/assets/img/meetinginvestors.png`
+        }
+      } else {
+        return {
+          title: `Pas d'objectif atteint`,
+          illustration: `@/assets/img/failure.png`
         }
       }
-
-      else {
-        return {
-          title:`Pas d'objectif atteint`,
-          illustration:`@/assets/img/failure.png`
-        }
-      }
-
     },
-    p() {
-      if (state.money > 1000) {
+    p () {
+      if (this.$store.state.money > 1000) {
         return {
-          text:`Tout comme la vôtre, la plupart des startups continuent à s'agrandir, sans pourtant passer par une entrée en bourse, ni se faire acheter par des joueurs majeurs dans le marché. `
+          text: `Tout comme la vôtre, la plupart des startups continuent à s'agrandir, sans pourtant passer par une entrée en bourse, ni se faire acheter par des joueurs majeurs dans le marché. `
         }
       }
 
-      if ((state.investorPoints > 16) || ( getters.npv > 0)) {
+      if ((this.$store.state.investorPoints > 16) || (this.$store.getters.npv > 0)) {
         return {
-          text:`Félicitations ! Vos investisseurs vous accompagnent jusqu'à l'introduction en bourse, une étape que très peu d'entreprises naissantes ont atteinte.`
+          text: `Félicitations ! Vos investisseurs vous accompagnent jusqu'à l'introduction en bourse, une étape que très peu d'entreprises naissantes ont atteinte.`
         }
       }
 
-      if ((state.reputationPoints > 16) || (state.investorPoints > 10) || (state.marketShare > 0.1)) {
+      if ((this.$store.state.reputationPoints > 16) || (this.$store.state.investorPoints > 10) || (this.$store.state.marketShare > 0.1)) {
         return {
-          text:`Félicitations ! Vous venez de recevoir une offre de rachat par un concurrent majeur dans le marché. L'acquisition n'est pas une défaite, car vous jouez un rôle important dans le secteur, ce qui pose une menace à l'égard des concurrents. Nombreux entrepreneurs, dont notamment votre conseiller Barthélemy Aupée, finissent par se faire acheter. Rester à juger si l'offre de rachat ira bien pour votre création.`
+          text: `Félicitations ! Vous venez de recevoir une offre de rachat par un concurrent majeur dans le marché. L'acquisition n'est pas une défaite, car vous jouez un rôle important dans le secteur, ce qui pose une menace à l'égard des concurrents. Nombreux entrepreneurs, dont notamment votre conseiller Barthélemy Aupée, finissent par se faire acheter. Rester à juger si l'offre de rachat ira bien pour votre création.`
         }
-      } 
-
-      else {
+      } else {
         return {
-          text:`L'entreprenariat n'est jamais simple - mais vous n'êtes pas seul.e. Le taux de faillite en France est de 40% pour une start-up non accompagnée, et de 20% pour celles accompagnées. En tout cas, n'ayez pas peur: vouz pouvez toujours ressayer!`
+          text: `L'entreprenariat n'est jamais simple - mais vous n'êtes pas seul.e. Le taux de faillite en France est de 40% pour une start-up non accompagnée, et de 20% pour celles accompagnées. En tout cas, n'ayez pas peur: vouz pouvez toujours ressayer!`
         }
-      }  
-
+      }
     }
   },
   watch: {},
   methods: {
-    gobackhome(){
-      route.push({
-        name:'home'
+    gobackhome () {
+      this.$router.push({
+        name: 'home'
       })
     }
   }
