@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Startup logo" src="../assets/logo.png">
     <img alt="bonhomme" src="../assets/img/idea-man-image.png">
-    <p v-typeit>Seriez-vous la prochaine licorne française ?</p>
+    <p v-typeit>Serez-vous la prochaine licorne française ?</p>
     <router-link
       tag="button"
       to="game">

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import router from './router'
+import GameSteps from '@/game'
 
 import Finance from 'financejs'
 import { median } from 'd3-array'
@@ -90,11 +91,11 @@ export default new Vuex.Store({
         //   })
         // }
 
-        // if (state.s > 50) {
-        //   return router.push({
-        //     name: 'fin'
-        //   })
-        // }
+        if (GameSteps.step === 46) {
+          return router.push({
+            name: 'fin'
+          })
+        }
       })
     }
   ]

@@ -39,7 +39,7 @@ export default {
   computed: {},
   watch: {},
   methods: {
-    nothong () {
+    nothing () {
       this.$router.go(-1)
       this.$state.commit(multipleMoneyBy, Math.floor(Math.random() * 10)/-100)
       this.$state.commit(addInvestorPoints, -3)
@@ -47,23 +47,24 @@ export default {
     banklending () {
       this.$router.go(-1)
       if (state.difficulty === 'easy') {
-        this.$state.commit(addMoney, 50)
-        this.$state.commit(addInvestorPoints, -3)
+        this.$state.commit(addMoney, 100)
+        this.$state.commit(addInvestorPoints, -7)
       }
       if (state.difficulty === 'hard') {
-        this.$state.comit(addInvestorPoints, -5)
+        this.$state.commit(addMoney,40)
+        this.$state.comit(addInvestorPoints, -10)
         // comment ajouter un popup ici pour activer le modal.vue?
       }
     },
     family() {
       this.$router.go(-1)
       if (state.difficulty === 'easy') {
-        this.$state.commit(addMoney, 50)
-        this.$state.commit(addReputationPoints, -3)
+        this.$state.commit(addMoney, 80)
+        this.$state.commit(addReputationPoints, -5)
       }
       if (state.difficulty === 'hard') {
-        this.$state.commit(addMoney, 30)
-        this.$state.commit(addReputationPoints, -5)
+        this.$state.commit(addMoney, 40)
+        this.$state.commit(addReputationPoints, -7)
       }
     },
     saving () {

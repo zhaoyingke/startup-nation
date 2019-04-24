@@ -49,7 +49,7 @@ export default new Router({
     {
       path: '/fin',
       name: 'fin',
-      component: () => import(/* webpackChunkName: "about" */ './views/fin.vue')
+      component: () => import(/* webpackChunkName: "fin" */ './views/fin.vue')
     }
   ]
 })

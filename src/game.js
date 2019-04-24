@@ -1,3 +1,4 @@
+// import router from './router'
 // 0
 export default [{
   message: `Ce jeu est basé sur des reportages et des interviews avec des entrepreneurs, des investisseurs et des conseillers en création d'entreprise. Nous avons simplifié les étapes pour montrer les enjeux de l'entreprenariat. Dans la vraie vie, l'ambition entrepreneuriale implique bien plus de labeur, de savoir-faire, et de chance…`,
@@ -9,7 +10,7 @@ export default [{
 },
 {
   advice: `“La plupart des gens qui montent une startup ont déjà travaillé dans le secteur et ils ont eu l’occasion de voir les défauts et les qualités de leur activité, de voir ce qu’il manquait”, témoigne Barthélemy Aupée, qui a créé sa première entreprise Stagissimo en 2015, après avoir travaillé pendant cinq ans dans le recrutement.`,
-  message: `Choisissez votre niveau de difficulté. Cela affectera les évènements que vous rencontrerez dans votre aventure à venir.`,
+  message: `Choisissez votre niveau de difficulté. Cela affectera les évènements que vous rencontrerez dans votre aventure à venir. Vous pouvez suivre les conseils d'entrepreneurs et de conseillers en cliquant sur le 💬 ci-dessus à droite.`,
   buttons: [
     {
       label: 'Plus facile',
@@ -539,7 +540,7 @@ Incubateurs, accélérateurs ou pépinières d’entreprises`,
 },
 // 33
 {
-  message: `Un.e journaliste travaillant.e pour un média économique est intéressé.e par votre profil et souhaite dialoguer avec vous. Le verrez-vous ?
+  message: `Un.e journaliste travaillant pour un média économique est intéressé.e par votre profil et souhaite dialoguer avec vous. Le verrez-vous ?
 `,
   buttons: [
     {
@@ -941,6 +942,9 @@ Incubateurs, accélérateurs ou pépinières d’entreprises`,
       action: (commit) => {
         commit('addReputationPoints', 5)
         commit('multiplyMoneyBy', 1.05)
+        // return router.push({
+        //   name: 'fin'
+        // })
       }
     },
     {
@@ -948,6 +952,9 @@ Incubateurs, accélérateurs ou pépinières d’entreprises`,
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
         commit('addReputationPoints', 3)
+        // return router.push({
+        //   name: 'fin'
+        // })
       }
     },
     {
@@ -955,6 +962,9 @@ Incubateurs, accélérateurs ou pépinières d’entreprises`,
       action: (commit) => {
         commit('multiplyMoneyBy', 1.05)
         commit('addReputationPoints', -5)
+        // return router.push({
+        //   name: 'fin'
+        // })
       }
     }
   ]

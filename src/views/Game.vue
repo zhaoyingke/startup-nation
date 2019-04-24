@@ -4,7 +4,7 @@
       v-if="currentStep.advice"
       @click="showModal = !showModal"
       class="speech">
-      <img :src="require(`@/assets/img/speech.png`)">
+      <img :src="require('@/assets/img/speech.png')">
     </button>
     <modal
       v-if="showModal && currentStep.advice"

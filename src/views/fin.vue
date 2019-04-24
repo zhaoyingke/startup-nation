@@ -1,19 +1,24 @@
 <template>
   <div class="game">
-    <header-illustration title="Vous êtes parvenu.e à la fin du jeu"/>
+    <header-illustration  
+      :title="header.title"
+      :illustration="header.illustration"/>
     <main class="box">
       <p
         v-typeit="() => typeItDone = true"
+        :text="p.text"
         class="text"/>
       <div
         v-if="typeItDone"
         class="actions">
-        <button @click="sharefb">Partager sur Facebook</button>
-        <button @click="sharetwitter">Partager sur twitter</button>
-        <button @click="sendlink">Envoyer le lien</button>
+        <button><ShareFacebook url="https://zhaoyingke.github.io/startup-…"/></button>
+        <button><ShareTwitter url="https://zhaoyingke.github.io/startup-…"/></button>
+        <button><ShareLinkedIn url="https://zhaoyingke.github.io/startup-…"/></button>
+        <button><ShareWhatsApp url="https://zhaoyingke.github.io/startup-…"/></button>
+        <button><ShareEmail url="https://zhaoyingke.github.io/startup-…"/></button>
         <button @click="gobackhome">Retourner à la page d'accueil</button>
       </div>
-      <gauges />
+      <gauges/>
     </main>
   </div>
 </template>
@@ -21,6 +26,9 @@
 <script>
 import Gauges from '@/components/Gauges'
 import HeaderIllustration from '@/components/HeaderIllustration'
+import state from '@/store.js'
+import getters from '@/store.js'
+import VueShareSocial from 'vue-share-social'
 
 export default {
   name: 'fin',
@@ -34,25 +42,69 @@ export default {
     }
   },
   computed: {
-    header() {illustration: 'scaling-image.png'}
+    header () {
+      if (state.money > 1000) {
+        return {
+          title:'Continuer comme tel...',
+          illustration: '@/assets/img/Continue.png'
+        }
+      }
+
+      if ((state.investorPoints > 16) || ( getters.npv > 0)) {
+        return {
+          title:'Introduction en bourse',
+          illustration:'@/assets/img/ipo.png'
+        }
+      }
+
+      if ((state.reputationPoints > 16) || (state.investorPoints > 10)) {
+        return {
+          title:`Vous faire acheter par un concurrent`,
+          illustration:`@/assets/img/meetinginvestors.png`
+        }
+      }
+
+      else {
+        return {
+          title:`Pas d'objectif atteint`,
+          illustration:`@/assets/img/failure.png`
+        }
+      }
+
+    },
+    p() {
+      if (state.money > 1000) {
+        return {
+          text:`Tout comme la vôtre, la plupart des startups continuent à s'agrandir, sans pourtant passer par une entrée en bourse, ni se faire acheter par des joueurs majeurs dans le marché. `
+        }
+      }
+
+      if ((state.investorPoints > 16) || ( getters.npv > 0)) {
+        return {
+          text:`Félicitations ! Vos investisseurs vous accompagnent jusqu'à l'introduction en bourse, une étape que très peu d'entreprises naissantes ont atteinte.`
+        }
+      }
+
+      if ((state.reputationPoints > 16) || (state.investorPoints > 10) || (state.marketShare > 0.1)) {
+        return {
+          text:`Félicitations ! Vous venez de recevoir une offre de rachat par un concurrent majeur dans le marché. L'acquisition n'est pas une défaite, car vous jouez un rôle important dans le secteur, ce qui pose une menace à l'égard des concurrents. Nombreux entrepreneurs, dont notamment votre conseiller Barthélemy Aupée, finissent par se faire acheter. Rester à juger si l'offre de rachat ira bien pour votre création.`
+        }
+      } 
+
+      else {
+        return {
+          text:`L'entreprenariat n'est jamais simple - mais vous n'êtes pas seul.e. Le taux de faillite en France est de 40% pour une start-up non accompagnée, et de 20% pour celles accompagnées. En tout cas, n'ayez pas peur: vouz pouvez toujours ressayer!`
+        }
+      }  
+
+    }
   },
   watch: {},
   methods: {
-    nothing () {
-      this.$router.go(-1)
-      this.$store.commit(addReputationPoints, -10)
-      this.$store.commit(addInvestorPoints, -10)
-    },
-    free () {
-      this.$router.go(-1)
-      this.$store.commit(addReputationPoints, -8)
-      this.$store.commit(addInvestorPoints, -10)
-    },
-    prime () {
-      this.$router.go(-1)
-      this.$store.commit(addReputationPoints, -10)
-      this.$store.commit(addInvestorPoints, -8)
-      this.$store.commit(addMoney, Math.floor(Math.random() * 10) * 8)
+    gobackhome(){
+      route.push({
+        name:'home'
+      })
     }
   }
 }
