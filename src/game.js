@@ -1,7 +1,7 @@
 
 // 0
 export default [{
-  message: `Ce jeu est basé sur des reportages et des interviews avec des entrepreneurs, des investisseurs et des conseillers en création d'entreprise. Nous avons simplifié les étapes pour montrer les enjeux de l'entreprenariat. Dans la vraie vie, l'ambition entrepreneuriale implique bien plus de labeur, de savoir-faire, et de chance…`,
+  message: `Ce newsgame est basé sur des reportages et des interviews avec des entrepreneurs, des investisseurs et des conseillers en création d'entreprise. Nous avons simplifié les étapes pour montrer les enjeux de l'entreprenariat. Dans la vraie vie, l'ambition entrepreneuriale implique bien plus de labeur, de savoir-faire, et de chance… Nous sommes trois étudiants à l’École de journalisme de Sciences Po: Yingke Zhao, Ariana Mozafari et Viola Stefanello. Ce projet est encadré nos enseignants Jules Bonnard, Pierre Romera, et Célia Mériguet. Musique faite par Iden Mozafari (Maxxid). Crédit Images : Vecteezy.com et Ariana Mozafari.`,
   buttons: [`J'ai compris`]
 },
 {
