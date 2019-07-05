@@ -1,7 +1,7 @@
 
 // 0
 export default [{
-  message: `Ce newsgame est basé sur des reportages et des interviews avec des entrepreneurs, des investisseurs et des conseillers en création d'entreprise. Nous avons simplifié les étapes pour montrer les enjeux de l'entreprenariat. Dans la vraie vie, l'ambition entrepreneuriale implique bien plus de labeur, de savoir-faire, et de chance… Nous sommes trois étudiants à l’École de journalisme de Sciences Po: Yingke Zhao, Ariana Mozafari et Viola Stefanello. Ce projet est encadré nos enseignants Jules Bonnard, Pierre Romera, et Célia Mériguet. Musique faite par Iden Mozafari (Maxxid). Crédit Images : Vecteezy.com et Ariana Mozafari.`,
+  message: `Ce newsgame est basé sur des reportages et des interviews avec des entrepreneurs, des investisseurs et des conseillers en création d'entreprise. Nous avons simplifié les étapes pour montrer les enjeux de l'entreprenariat. Dans la vraie vie, l'ambition entrepreneuriale implique bien plus de labeur, de savoir-faire, et de chance…. Nous sommes trois étudiants à l’École de journalisme de Sciences Po: Yingke Zhao, Ariana Mozafari et Viola Stefanello. Ce projet est encadré par nos enseignants Jules Bonnard, Pierre Romera, et Célia Mériguet. Musique faite par Iden Mozafari (Maxxid). Crédit Images : Vecteezy.com et Ariana Mozafari.`,
   buttons: [`J'ai compris`]
 },
 {
@@ -188,7 +188,7 @@ export default [{
 },
 // 15
 {
-  message: `Félicitations ! Vous venez de fabriquer le prototype de votre apple que vous intitulez <b>JustDrink</b>. Faites des tests avant de la lancer officiellement sur le marché. Vous pouvez désormais surveiller votre notoriété parmi les utilisateurs`,
+  message: `Félicitations ! Vous venez de fabriquer le prototype de votre appli que vous intitulez <b>JustDrink</b>. Faites des tests avant de la lancer officiellement sur le marché. Vous pouvez désormais surveiller votre notoriété parmi les utilisateurs`,
   buttons: [
     {
       label: `J'ai hâte !`,
@@ -215,7 +215,7 @@ export default [{
 },
 // 16
 {
-  advice: `“Ne vous associez pas par compétence. Une équipe dont les membres ont des compétences identiques réussira mieux, car cela permettra de maintenir le niveau d'énergie sur un même axe,” dit Maxime Blondel de The Family, investisseur leader dans les startups européennes. “Trouve des partenaires qui aient des contacts. Le cash n’est pas tout ce dont on a besoin - il est plus important de construire un network quand on lance un entreprise”, conseille William Bonutto de I’m Ok Solutions. “Aie un vrai vivier des gens prêts à travailler avec toi”.`,
+  advice: `“Ne vous associez pas par compétence. Une équipe dont les membres ont des compétences identiques réussira mieux, car cela permettra de maintenir le niveau d'énergie sur un même axe,” dit Maxime Blondel de The Family, investisseur leader dans les startups européennes. “Trouve des partenaires qui aient des contacts. Le cash n’est pas tout ce dont on a besoin - il est plus important de construire un network quand on lance une entreprise”, conseille William Bonutto de I’m Ok Solutions. “Aie un vrai vivier des gens prêts à travailler avec toi”.`,
   message: `Souhaitez-vous recruter plus de membres dans votre équipe ?`,
   buttons: [
     {
